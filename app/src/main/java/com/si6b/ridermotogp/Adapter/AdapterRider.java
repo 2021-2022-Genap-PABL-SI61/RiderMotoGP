@@ -47,7 +47,7 @@ public class AdapterRider extends RecyclerView.Adapter<AdapterRider.HolderRider>
         Glide
                 .with(ctx)
                 .load(MR.getFoto())
-                .placeholder(R.mipmap.ic_launcher)
+                .placeholder(R.drawable.rider_placeholder)
                 .into(holder.ivRider);
     }
 
