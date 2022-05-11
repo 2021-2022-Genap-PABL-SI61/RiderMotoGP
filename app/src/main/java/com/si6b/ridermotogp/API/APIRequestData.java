@@ -20,4 +20,10 @@ public interface APIRequestData {
             @Field("sponsor") String sponsor,
             @Field("negara") String negara
     );
+
+    @FormUrlEncoded
+    @POST("delete.php")
+    Call<ModelResponse> ardDeleteData(
+        @Field("id") int id
+    );
 }
