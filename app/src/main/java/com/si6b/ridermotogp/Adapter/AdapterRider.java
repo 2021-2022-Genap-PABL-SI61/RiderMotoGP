@@ -2,6 +2,7 @@ package com.si6b.ridermotogp.Adapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import com.si6b.ridermotogp.API.APIRequestData;
 import com.si6b.ridermotogp.API.RetroServer;
 import com.si6b.ridermotogp.Activity.MainActivity;
 import com.si6b.ridermotogp.Activity.TambahActivity;
+import com.si6b.ridermotogp.Activity.UbahActivity;
 import com.si6b.ridermotogp.Model.ModelResponse;
 import com.si6b.ridermotogp.Model.ModelRider;
 import com.si6b.ridermotogp.R;
@@ -107,7 +109,13 @@ public class AdapterRider extends RecyclerView.Adapter<AdapterRider.HolderRider>
                     pesan.setPositiveButton("Ubah", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
+                            Intent kirim = new Intent(ctx, UbahActivity.class);
+                            kirim.putExtra("xId", tvId.getText().toString());
+                            kirim.putExtra("xNama", tvNama.getText().toString());
+                            kirim.putExtra("xNomor", tvNomor.getText().toString());
+                            kirim.putExtra("xNegara", tvNegara.getText().toString());
+                            kirim.putExtra("xSponsor", tvSponsor.getText().toString());
+                            ctx.startActivity(kirim);
                         }
                     });
 
