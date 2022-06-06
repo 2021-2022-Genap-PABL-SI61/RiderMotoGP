@@ -30,7 +30,7 @@ public interface APIRequestData {
     @FormUrlEncoded
     @POST("update.php")
     Call<ModelResponse> ardUpdateData(
-            @Field("id") int id,
+            @Field("id") String id,
             @Field("nama") String nama,
             @Field("nomor") String nomor,
             @Field("sponsor") String sponsor,
